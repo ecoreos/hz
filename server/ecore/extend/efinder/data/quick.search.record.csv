@@ -1,0 +1,2 @@
+default,field_id/id,view_id/id,model_id/id,name,search_type,tree_view_id/id,window_type
+True,efinder.field_ir_ui_menu_menu_name_search,base.edit_menu_access,base.model_ir_ui_menu,Busqueda de Menus,Exact,efinder.view_ir_ui_menu_ps,New

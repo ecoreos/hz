@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates id="template" xml:space="preserve">
+
+    <t t-name="Systray.JobSearchWidget">
+        <li id="job_search_header" style="display: flex;">
+        	<span class="fa fa-microphone" title="Pronto podremos hablar ;)" style="float: left; position: absolute; top: 20px; right: 10px;color: #777; cursor: help;"></span>
+        	<input type="text" name="txtJobSearch" id="txtJobSearch" class="efinder_input" maxlength="35" value="" placeholder="Buscar Menus"> </input>  	
+        </li>
+    </t>
+
+</templates>

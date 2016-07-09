@@ -1,0 +1,291 @@
+# Translation of eCore Server.
+# This file contains the translation of the following modules:
+#	* auto_backup
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: eCore Server 5.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-26 14:17+0000\n"
+"PO-Revision-Date: 2015-03-26 14:17+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: auto_backup
+#: code:addons/auto_backup/backup_scheduler.py:137
+#, python-format
+msgid "%s"
+msgstr ""
+
+#. module: auto_backup
+#: help:db.backup,bkp_dir:0
+msgid "Absolute path for storing the backups"
+msgstr "Ruta absoluta para almacenar las copias de seguridad"
+
+#. module: auto_backup
+#: field:db.backup,sendmailsftpfail:0
+msgid "Auto. E-mail on backup fail"
+msgstr "Auto. Correo electrónico en la reserva de fallo"
+
+#. module: auto_backup
+#: field:db.backup,autoremove:0
+msgid "Auto. Remove Backups"
+msgstr "Auto eliminación de backups"
+
+#. module: auto_backup
+#: view:db.backup:auto_backup.view_backup_conf_form
+msgid "Automatic backups of the database can be scheduled as follows:"
+msgstr "Copias de seguridad automáticas de la base de datos se pueden programar de la siguiente manera:"
+
+#. module: auto_backup
+#: field:db.backup,bkp_dir:0
+msgid "Backup Directory"
+msgstr "Directorio de copias de seguridad"
+
+#. module: auto_backup
+#: view:db.backup:auto_backup.view_backup_conf_tree
+msgid "Backups"
+msgstr "Copias de seguridad"
+
+#. module: auto_backup
+#: help:db.backup,daystokeepsftp:0
+msgid "Choose after how many days the backup should be deleted from the FTP server. For example:\n"
+"If you fill in 5 the backups will be removed after 5 days from the FTP server."
+msgstr "Elija después de cuántos días la copia de seguridad debe ser borrado del servidor FTP. Por ejemplo: \ n "
+"Si rellena 5 las copias de seguridad serán retirados después de 5 días desde el servidor FTP."
+
+#. module: auto_backup
+#: help:db.backup,daystokeep:0
+msgid "Choose after how many days the backup should be deleted. For example:\n"
+"If you fill in 5 the backups will be removed after 5 days."
+msgstr "Elija después de cuántos días se debería eliminar la copia de seguridad. Por ejemplo: \ n "
+"Si rellena 5 las copias de seguridad serán eliminadas después de 5 días.
+
+#. module: auto_backup
+#: model:ir.actions.act_window,name:auto_backup.action_backup_conf_form
+#: model:ir.ui.menu,name:auto_backup.backup_conf_menu
+msgid "Configure Backup"
+msgstr "Configuracón de copias de seguridad"
+
+#. module: auto_backup
+#: view:db.backup:auto_backup.view_backup_conf_form
+msgid "Contact us!"
+msgstr "Contac us"
+
+#. module: auto_backup
+#: field:db.backup,create_uid:0
+msgid "Created by"
+msgstr "Create by"
+
+#. module: auto_backup
+#: field:db.backup,create_date:0
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: auto_backup
+#: field:db.backup,name:0
+msgid "Database"
+msgstr "Base de datos"
+
+#. module: auto_backup
+#: help:db.backup,name:0
+msgid "Database you want to schedule backups for"
+msgstr Base de datos para la que desea programar copias de seguridad"
+
+#. module: auto_backup
+#: field:db.backup,emailtonotify:0
+msgid "E-mail to notify"
+msgstr "Correo a notificar"
+
+#. module: auto_backup
+#: code:addons/auto_backup/backup_scheduler.py:106
+#: constraint:db.backup:0
+#, python-format
+msgid "Error ! No such database exists!"
+msgstr "Error ! No existe la base de datos"
+
+#. module: auto_backup
+#: help:db.backup,emailtonotify:0
+msgid "Fill in the e-mail where you want to be notified that the backup failed on the FTP."
+msgstr "Rellene la dirección de correo en la que desea que se le notifique que la copia de seguridad falló en el FTP."
+
+#. module: auto_backup
+#: view:db.backup:auto_backup.view_backup_conf_form
+msgid "For example: /ecore/backups/"
+msgstr ""
+
+#. module: auto_backup
+#: view:db.backup:auto_backup.view_backup_conf_form
+msgid "Go to Settings / Technical / Automation / Scheduled Actions."
+msgstr "Ir a Ajustes / Técnico / Automatización / acciones programadas."
+
+#. module: auto_backup
+#: view:db.backup:auto_backup.view_backup_conf_form
+msgid "Help"
+msgstr "Ayuda"
+
+#. module: auto_backup
+#: field:db.backup,host:0
+msgid "Host"
+msgstr "Host"
+
+#. module: auto_backup
+#: field:db.backup,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: auto_backup
+#: field:db.backup,sftpip:0
+msgid "IP Address SFTP Server"
+msgstr "Dirección del servidor SFTP"
+
+#. module: auto_backup
+#: help:db.backup,sendmailsftpfail:0
+msgid "If you check this option you can choose to automaticly get e-mailed when the backup to the external server failed."
+msgstr "Si marca esta opción se le notificara por correo electrónico cuando la copia de seguridad al servidor externo falló."
+
+#. module: auto_backup
+#: help:db.backup,autoremove:0
+msgid "If you check this option you can choose to automaticly remove the backup after xx days"
+msgstr "Si marca esta opción puede eliminar automáticamente la copia de seguridad después de x días"
+
+#. module: auto_backup
+#: help:db.backup,sftpwrite:0
+msgid "If you check this option you can specify the details needed to write to a remote server with SFTP."
+msgstr "Si marca esta opción se puede especificar los detalles necesarios para escribir en un servidor remoto SFTP."
+
+#. module: auto_backup
+#: field:db.backup,write_uid:0
+msgid "Last Updated by"
+msgstr "Ultima actualización por"
+
+#. module: auto_backup
+#: field:db.backup,write_date:0
+msgid "Last Updated on"
+msgstr "Ultima actulización"
+
+#. module: auto_backup
+#: view:db.backup:auto_backup.view_backup_conf_form
+msgid "Local backup configuration"
+msgstr "Configuracion de respaldo local"
+
+#. module: auto_backup
+#: view:db.backup:auto_backup.view_backup_conf_form
+msgid "Need more help?"
+msgstr "Necesita mas ayuda"
+
+#. module: auto_backup
+#: field:db.backup,sftppassword:0
+msgid "Password User SFTP Server"
+msgstr "Contreaseña del usuario del servidor SFTP"
+
+#. module: auto_backup
+#: field:db.backup,sftppath:0
+msgid "Path external server"
+msgstr "Ruta del servidor externo"
+
+#. module: auto_backup
+#: field:db.backup,port:0
+msgid "Port"
+msgstr "Puerto"
+
+#. module: auto_backup
+#: field:db.backup,daystokeepsftp:0
+msgid "Remove SFTP after x days"
+msgstr "Remover SFTP x dias despues"
+
+#. module: auto_backup
+#: field:db.backup,daystokeep:0
+msgid "Remove after x days"
+msgstr "Eliminar x dias despues"
+
+#. module: auto_backup
+#: view:db.backup:auto_backup.view_backup_conf_form
+msgid "SFTP"
+msgstr "SFTP"
+
+#. module: auto_backup
+#: field:db.backup,sftpport:0
+msgid "SFTP Port"
+msgstr "Puerto SFTP"
+
+#. module: auto_backup
+#: view:db.backup:auto_backup.view_backup_conf_search
+msgid "Search options"
+msgstr "Opciones de busqueda"
+
+#. module: auto_backup
+#: view:db.backup:auto_backup.view_backup_conf_form
+msgid "Search the action named 'Backup scheduler'."
+msgstr "Buscar la acción llamada 'planificador de copias de seguridad'"
+
+#. module: auto_backup
+#: view:db.backup:auto_backup.view_backup_conf_form
+msgid "Set the scheduler to active and fill in how often you want backups generated."
+msgstr "Ajuste el programador para activar y completar con qué frecuencia desea generar copias de seguridad ."
+
+#. module: auto_Ajuste el programador para activar y completar con qué frecuencia desea generar copias de seguridad .backup
+#: view:db.backup:auto_backup.view_backup_conf_form
+msgid "Test"
+msgstr "Test"
+
+#. module: auto_backup
+#: view:db.backup:auto_backup.view_backup_conf_form
+msgid "Test SFTP Connection"
+msgstr "Test de conexión SFTP"
+
+#. module: auto_backup
+#: help:db.backup,sftpip:0
+msgid "The IP address from your remote server. For example 192.168.0.1"
+msgstr "La dirección IP de su servidor remoto. Por ejemplo 192.168.0.1"
+
+#. module: auto_backup
+#: help:db.backup,sftppath:0
+msgid "The location to the folder where the dumps should be written to. For example /ecore/backups/.\n"
+"Files will then be written to /ecore/backups/ on your remote server."
+msgstr "La ubicación de la carpeta en la que las copias de seguridad se deben escribir. Por ejemplo /ecore/backups/.\n "
+"Las copias de seguridad entonces se escribirá en /ecore/backups/ en el servidor remoto."
+
+#. module: auto_backup
+#: help:db.backup,sftppassword:0
+msgid "The password from the user where the SFTP connection should be made with. This is the password from the user on the external server."
+msgstr "La contraseña del usuario, donde la conexión SFTP. Esta es la contraseña del usuario en el servidor externo."
+
+#. module: auto_backup
+#: help:db.backup,sftpport:0
+msgid "The port on the FTP server that accepts SSH/SFTP calls."
+msgstr "El puerto en el servidor FTP que acepta llamadas SSH / SFTP. (ej. 22)"
+
+#. module: auto_backup
+#: help:db.backup,sftpusername:0
+msgid "The username where the SFTP connection should be made with. This is the user on the external server."
+msgstr "El nombre de usuario donde la conexión SFTP. Este es el usuario en el servidor externo."
+
+#. module: auto_backup
+#: view:db.backup:auto_backup.view_backup_conf_form
+msgid "This configures the scheduler for automatic backup of the given database running on given host at given port on regular intervals."
+msgstr "Esto configura el programador de copia de seguridad automática de la base de datos dado que se ejecuta en equipo dado al puerto dado en intervalos regulares."
+
+#. module: auto_backup
+#: view:db.backup:auto_backup.view_backup_conf_form
+msgid "Use SFTP with caution! This writes files to external servers under the path you specify."
+msgstr "Utilice SFTP con precaución! Esto escribe archivos a servidores externos bajo la ruta que especifique."
+
+#. module: auto_backup
+#: field:db.backup,sftpusername:0
+msgid "Username SFTP Server"
+msgstr "Usuario del servidor SFTP"
+
+#. module: auto_backup
+#: view:db.backup:auto_backup.view_backup_conf_form
+msgid "Warning:"
+msgstr "Alerta"
+
+#. module: auto_backup
+#: field:db.backup,sftpwrite:0
+msgid "Write to external server with sftp"
+msgstr "Escribir en un servidor externo con sftp"

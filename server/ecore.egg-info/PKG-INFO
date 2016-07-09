@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: ecore
+Version: 9.0c-20151207
+Summary: ecore Server
+Home-page: https://www.ecore.com
+Author: eCore S.A.
+Author-email: info@ecore.com
+License: LGPL-3
+Description: ecore is a complete ERP and CRM. The main features are accounting (analytic
+        and financial), stock management, sales and purchases management, tasks
+        automation, marketing campaigns, help desk, POS, etc. Technical features include
+        a distributed server, flexible workflows, an object database, a dynamic GUI,
+        customizable reports, and XML-RPC interfaces.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3
+Classifier: Programming Language :: Python

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ecore>
+    <data>
+
+        <template id="assets_backend" name="im_ecore_support assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+               <script type="text/javascript" src="/im_ecore_support/static/src/js/im_ecore_support.js"></script>
+                <script type="text/javascript">
+                    ecore.define(function (require) {
+                        var eCoreSupport = require('im_ecore_support.eCoreSupport');
+                        new eCoreSupport(
+                            "<t t-esc="request.session.login"/>",
+                            "<t t-esc="request.registry['ir.config_parameter'].get_param(request.cr, request.uid, 'database.uuid')"/>"
+                        );
+                    });
+                </script>
+            </xpath>
+        </template>
+
+    </data>
+</ecore>

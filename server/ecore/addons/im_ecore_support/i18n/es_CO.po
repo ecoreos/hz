@@ -1,0 +1,35 @@
+# Translation of eCore Server.
+# This file contains the translation of the following modules:
+# * im_ecore_support
+# 
+# Translators:
+# Mateo Tibaquirá <nestormateo@gmail.com>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: eCore 9.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-29 10:26+0000\n"
+"PO-Revision-Date: 2015-10-28 13:24+0000\n"
+"Last-Translator: Mateo Tibaquirá <nestormateo@gmail.com>\n"
+"Language-Team: Spanish (Colombia) (http://www.transifex.com/ecore/ecore-9/language/es_CO/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es_CO\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: im_ecore_support
+#. ecore-web
+#: code:addons/im_ecore_support/static/src/js/im_ecore_support.js:76
+#, python-format
+msgid "Error"
+msgstr "Error"
+
+#. module: im_ecore_support
+#. ecore-web
+#: code:addons/im_ecore_support/static/src/js/im_ecore_support.js:76
+#, python-format
+msgid ""
+"The connection with the eCore Support Server failed. Please retry in a few "
+"minutes, or send an email to support@ecore.cool ."
+msgstr "La conexión con el Servidor de Soporte de eCore falló. Por favor vuelva a intentarlo en unos minutos, o envíe un correo a support@ecore.cool."

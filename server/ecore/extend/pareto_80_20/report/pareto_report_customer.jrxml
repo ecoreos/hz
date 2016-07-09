@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pareto_report" language="groovy" pageWidth="612" pageHeight="792" columnWidth="584" leftMargin="14" rightMargin="14" topMargin="14" bottomMargin="14">
+	<property name="ireport.zoom" value="2.357947691000003"/>
+	<property name="ireport.x" value="260"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="Nombre_de_la_compania-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Company-company_id/Nombre_de_la_compania-name]]></fieldDescription>
+	</field>
+	<field name="Logo-logo" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Company-company_id/Logo-logo]]></fieldDescription>
+	</field>
+	<field name="Costo_de_Compra_acumulado-cumulative_cost_purchase" class="java.lang.Float">
+		<fieldDescription><![CDATA[/data/record/Costo_de_Compra_acumulado-cumulative_cost_purchase]]></fieldDescription>
+	</field>
+	<field name="Nombre-name" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Cliente-partner_id/Nombre-name]]></fieldDescription>
+	</field>
+	<field name="Costo_de_Compra_acumulado-cumulative_cost_purchase2" class="java.lang.Float">
+		<fieldDescription><![CDATA[/data/record/Costo_de_Compra_acumulado-cumulative_cost_purchase]]></fieldDescription>
+	</field>
+	<field name="Ventas_Acumuladas-cumulative_percentage" class="java.lang.Float">
+		<fieldDescription><![CDATA[/data/record/Ventas_Acumuladas-cumulative_percentage]]></fieldDescription>
+	</field>
+	<field name="Ventas_Acumuladas-cumulative_sales" class="java.lang.Float">
+		<fieldDescription><![CDATA[/data/record/Ventas_Acumuladas-cumulative_sales]]></fieldDescription>
+	</field>
+	<field name="percentage" class="java.lang.Float">
+		<fieldDescription><![CDATA[/data/record/percentage]]></fieldDescription>
+	</field>
+	<field name="Margen-percentage_margin" class="java.lang.Float">
+		<fieldDescription><![CDATA[/data/record/Margen-percentage_margin]]></fieldDescription>
+	</field>
+	<field name="Ventas-percentage_sales" class="java.lang.Float">
+		<fieldDescription><![CDATA[/data/record/Ventas-percentage_sales]]></fieldDescription>
+	</field>
+	<field name="Ventas-sales" class="java.lang.Float">
+		<fieldDescription><![CDATA[/data/record/Ventas-sales]]></fieldDescription>
+	</field>
+	<field name="Secuencia-sequence" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/Secuencia-sequence]]></fieldDescription>
+	</field>
+	<field name="Utilidad-utility" class="java.lang.Float">
+		<fieldDescription><![CDATA[/data/record/Utilidad-utility]]></fieldDescription>
+	</field>
+	<field name="Costo_de_Compras-cost_purchase" class="java.lang.Float">
+		<fieldDescription><![CDATA[/data/record/Costo_de_Compras-cost_purchase]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="121" splitType="Stretch">
+			<image vAlign="Middle" onErrorType="Icon">
+				<reportElement x="0" y="0" width="79" height="76"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{Logo-logo}]]></imageExpression>
+			</image>
+			<image vAlign="Middle" onErrorType="Icon">
+				<reportElement x="507" y="0" width="77" height="76"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{Logo-logo}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="79" y="0" width="428" height="76"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Nombre_de_la_compania-name}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="86" width="584" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.5" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="99" y="96" width="383" height="16" backcolor="#FE1201"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Analisis de Pareto para Clientes (80/20)]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="495" y="96" width="89" height="16"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Opaque" x="0" y="0" width="584" height="34" backcolor="#FE1201"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="42" y="0" width="120" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="43" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Secuencia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="161" y="0" width="27" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="0" width="45" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ventas $]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="231" y="0" width="46" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ventas %]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="276" y="0" width="49" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ventas
+Acumuladas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="324" y="0" width="53" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ventas
+Acumuladas %]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="376" y="0" width="49" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Utilidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="424" y="0" width="52" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Margen %]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="475" y="0" width="53" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Costo de Compras]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="527" y="0" width="57" height="34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Costo de C. Acumulado]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="42" y="1" width="120" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Nombre-name}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="324" y="1" width="53" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{Ventas_Acumuladas-cumulative_percentage}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="161" y="1" width="27" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{percentage}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="424" y="0" width="52" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{Margen-percentage_margin}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="231" y="0" width="46" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{Ventas-percentage_sales}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="187" y="1" width="45" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{Ventas-sales}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="376" y="0" width="49" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{Utilidad-utility}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="1" width="43" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Secuencia-sequence}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="276" y="0" width="49" height="21"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{Ventas_Acumuladas-cumulative_sales}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="475" y="1" width="53" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{Costo_de_Compras-cost_purchase}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="527" y="1" width="57" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$F{Costo_de_Compra_acumulado-cumulative_cost_purchase2}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" stretchType="RelativeToTallestObject" x="0" y="21" width="584" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

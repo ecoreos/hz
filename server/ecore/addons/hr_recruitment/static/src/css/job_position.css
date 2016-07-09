@@ -1,0 +1,30 @@
+.ecore .oe_manager_name {
+    font-size: 11px;
+}
+.ecore .oe_gray {
+    color: gray;
+}
+.ecore .oe_link_hover:hover{
+    text-decoration: underline;
+}
+.ecore .oe_applicant_kanban {
+  width: 276px;
+}
+.ecore .oe_margin_top_4 {
+    margin-top: 4px;
+}
+.ecore .oe_job_head {
+    margin-bottom: -4px;
+    font-size: 15px;
+}
+.ecore .oe_job_font {
+    font-size: 15px;
+}
+
+.ecore .oe_job_avatar {
+    width: 24px; 
+}
+
+.ecore .oe_applications {
+    margin-top: 30px;
+}

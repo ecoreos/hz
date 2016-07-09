@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ecore>
+    <data>
+
+<!--         <record id="pareto_report_tree" model="ir.ui.view">
+          <field name="name">pareto.report.tree</field>
+          <field name="model">pareto.report</field>
+          <field name="type">tree</field>
+          <field name="priority" eval="5"/>
+          <field name="arch" type="xml">
+            <tree string="Analisis 80/20 Pareto Law" create="false">
+                <field name="product_id" invisible="1"/>
+                <field name="sequence" />
+                <field name="code" />
+                <field name="description" />
+                <field name="percentage" />
+                <field name="sales" />
+                <field name="sale_units" />
+                <field name="percentage_sales"/>
+                <field name="cumulative_sales"/>
+                <field name="cumulative_percentage" />
+                <field name="utility" />
+                <field name="values" />
+                <field name="units" />
+                <field name="rsi" />
+                <field name="percentage_margin" />
+                <field name="values_rot" />
+                <field name="units_rot" />
+                <field name="stock_to" />
+                <field name="unit_cost_prom" />
+                <field name="units_per_ordering" />
+                <field name="purchases" />
+            </tree>
+          </field>
+        </record>
+
+        <record id="pareto_report_filter" model="ir.ui.view">
+          <field name="name">pareto.report.filter</field>
+          <field name="model">pareto.report</field>
+          <field name="type">search</field>
+          <field name="priority" eval="5"/>
+          <field name="arch" type="xml">
+            <search string="Analisis 80/20 Pareto Law">
+                <field name="product_id" />
+            </search>
+          </field>
+        </record>
+
+          <record model="ir.actions.act_window" id="action_pareto_report">
+              <field name="name">Analisis 80/20 Productos</field>
+              <field name="res_model">pareto.report</field>
+              <field name="view_type">form</field>
+              <field name="view_mode">tree</field>
+              <field name="search_view_id" ref="pareto_report_filter"/>
+          </record>
+
+    <menuitem action="action_pareto_report" id="menu_pareto_report" parent="base.next_id_64" sequence="51"/> -->
+
+
+        <record id="pareto_report_tree_customer" model="ir.ui.view">
+          <field name="name">pareto.report.customer.tree</field>
+          <field name="model">pareto.report.customer</field>
+          <field name="type">tree</field>
+          <field name="priority" eval="5"/>
+          <field name="arch" type="xml">
+            <tree string="Analisis 80/20 Clientes" create="false">
+                <field name="sequence" />
+                <field name="partner_id" />
+                <field name="percentage" />
+                <field name="sales" sum="Ventas"/>
+                <field name="percentage_sales" sum="Porcentaje Ventas"/>
+                <field name="cumulative_sales" />
+                <field name="cumulative_percentage" />
+                <field name="utility" sum="Utilidad"/>
+                <field name="percentage_margin"/>
+                <field name="cost_purchase" sum="Costo Compras"/>
+                <field name="cumulative_cost_purchase" />
+                <field name="shop_id" />
+                <field name="pricelist_id" />
+                
+            </tree>
+          </field>
+        </record>
+
+        <record id="pareto_report_filter_customer" model="ir.ui.view">
+          <field name="name">pareto.report.filter</field>
+          <field name="model">pareto.report.customer</field>
+          <field name="type">search</field>
+          <field name="priority" eval="5"/>
+          <field name="arch" type="xml">
+            <search string="Analisis 80/20 Pareto Law">
+                <field name="partner_id" />
+                <field name="shop_id" />
+                <field name="pricelist_id" />
+                <group expand="0" string="Group By...">
+                  <filter string="Tienda" domain="[]" context="{'group_by':'shop_id'}"/>
+                  <filter string="Lista de Precios" domain="[]" context="{'group_by':'pricelist_id'}"/>
+                  
+              </group>  
+            </search>
+          </field>
+        </record>
+
+          <record model="ir.actions.act_window" id="action_pareto_report_customer">
+              <field name="name">Analisis 80/20 Clientes</field>
+              <field name="res_model">pareto.report.customer</field>
+              <field name="view_type">form</field>
+              <field name="view_mode">tree</field>
+              <field name="search_view_id" ref="pareto_report_filter_customer"/>
+          </record>
+
+    <!-- <menuitem action="action_pareto_report_customer" id="menu_pareto_report_customer" parent="base.menu_base_partner" sequence="3"/> -->
+
+    <menuitem action="action_pareto_report_customer" id="menu_pareto_report_customer_2" parent="menu_reports_argil" sequence="2"/>
+
+    </data>
+</ecore>

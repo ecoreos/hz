@@ -1,0 +1,2 @@
+account_id,journal_id,partner_id,date_invoice,invoice_line_ids/quantity,invoice_line_ids/price_unit,invoice_line_ids/account_id,invoice_line_ids/product_id,invoice_line_ids/name,invoice_line_ids/invoice_line_tax_ids/id
+Account Receivable,Facturas de cliente,Cliente XX,2016-03-11,1,100,Current Assets,Helado,Soporte Tecnico de Migracion de Servidores VPS.,__export__.account_tax_1

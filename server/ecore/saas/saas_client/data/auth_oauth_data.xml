@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<ecore>
+    <data>
+        <delete id="auth_oauth.provider_ecore" model="auth.oauth.provider"/>
+    </data>
+</ecore>

@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<ecore>
+<data>
+		<record id="view_quick_search_record_form" model="ir.ui.view">
+			<field name="name">Quick Search Form view</field>
+			<field name="model">quick.search.record</field>			
+			<field name="arch" type="xml">
+				<form string="Search Record">
+				 <sheet>
+				 	<label for="name" string="Search Preference Name" class="oe_edit_only"/>
+                    <h1><field name="name" required="1"/></h1>                   
+                    <group>
+                        <group>
+                        	<field name="model_id" required="1"/>
+                        	<field name="model_model"/>
+                        	<field name="default"/>                        	                        	
+                        </group>
+                        <group>
+                        	<field name="view_id" domain="[('type','=','form'),('model','=',model_model)]" required="1"/>
+   							<field name="tree_view_id" domain="[('type','=','tree'),('model','=',model_model)]" />
+   							<field name="field_id" required="1" domain="[('model_id','=',model_id),('ttype','in',('char','text','integer'))]"/>
+                        </group>                     
+                    </group> 
+                    <label for="search_type" string="I want to search" class="oe_inline"/><b><field name="search_type" nolabel="1" class="oe_inline" required="1"/></b><label string="Records in" class="oe_inline"/><b><field name="window_type" nolabel="1" class="oe_inline" required="1"/></b><label string="Window." class="oe_inline"/>
+                    <notebook>
+                       <page string="Notes">
+                         <p>
+                      	   Select Tree view  search preference will return multiple records otherwise select only form view.<br/>                      	                           
+                         </p>
+                     </page>
+                    </notebook>
+                 </sheet>
+				</form>
+			</field>
+		</record>
+	 <record id="view_quick_search_record_tree" model="ir.ui.view">
+            <field name="name">Quick Search Record Tree view</field>
+            <field name="model">quick.search.record</field>
+            <field name="arch" type="xml">
+                <tree string="Search Record">
+   					<field name="name" required="1"/>
+   					<field name="default"/>
+   				    <field name="model_id" required="1"/>
+   					<field name="model_model"/>
+   					<field name="view_id" domain="[('type','=','form'),('model','=',model_model)]" required="1"/>
+   					<field name="tree_view_id" domain="[('type','=','tree'),('model','=',model_model)]" />
+   					<field name="field_id" required="1" domain="[('model_id','=',model_id),'|',('ttype','=','char'),('ttype','=','integer')]"/>
+   				</tree>
+            </field>
+        </record>
+        <record id="action_quick_search_record" model="ir.actions.act_window">
+            <field name="name">Quick Search Record Info </field>
+            <field name="res_model">quick.search.record</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p> There is no Search Record defined yet !
+              </p>
+            </field>
+        </record>
+
+     <menuitem id="menu_quick__search_record" name="Quick Search Record" action="action_quick_search_record" parent="base.next_id_6" sequence="10"/>
+	
+  <!-- CHRMN -->
+
+      <!-- <record id="view_form_menu_ps" model="ir.ui.view">
+          <field name="name">ir.ui.menu.ps</field>
+          <field name="model">ir.ui.menu</field>
+          <field name="type">form</field>
+          <field name="inherit_id" ref="base.edit_menu_access"/>
+          <field name="arch" type="xml">
+            <field name="icon" position="after">
+              <button name="launch_action" string="Ejecutar Accion" type="object" icon="open_link"/>
+            </field>
+          </field>
+        </record> -->
+
+      <record id="view_form_menu_tree_ps" model="ir.ui.view">
+          <field name="name">ir.ui.menu.ps</field>
+          <field name="model">ir.ui.menu</field>
+          <field name="type">tree</field>
+          <field name="inherit_id" ref="base.edit_menu"/>
+          <field name="arch" type="xml">
+            <field name="complete_name" position="after">
+              <field name="menu_name_search" invisible="1" />
+              <button name="launch_action" string="Ejecutar Accion" type="object" icon="open_link"/>
+            </field>
+          </field>
+        </record>
+
+      <record id="view_form_menu_search_pss" model="ir.ui.view">
+          <field name="name">ir.ui.menu.ps</field>
+          <field name="model">ir.ui.menu</field>
+          <field name="type">search</field>
+          <field name="inherit_id" ref="base.view_model_search"/>
+          <field name="arch" type="xml">
+            <field name="name" position="after">
+              <field name="menu_name_search" />
+            </field>
+          </field>
+        </record>
+
+      <!-- CREANDO EL MENU DE ACCESO -->
+
+      <!-- <record id="id_search_menu_default" model="ir.ui.view">
+          <field name="name">Busqueda de Menus</field>
+          <field name="default">True</field>
+          <field name="search_type">exact</field>
+          <field name="window_type">new</field>
+          <field name="model_id" ref="base.model_ir_ui_menu" />
+          <field name="model_model">ir.ui.menu</field>
+          <field name="view_id" ref="base.edit_menu_access"/>
+          <field name="tree_view_id" ref="base.edit_menu"/>
+          <field name="field_id" ref="efinder.field_ir_ui_menu_menu_name_search"/>
+        </record> -->
+      <record id="view_ir_ui_menu_ps" model="ir.ui.view">
+          <field name="name">ir.ui.menu.ps.tree</field>
+          <field name="model">ir.ui.menu</field>
+          <field name="type">tree</field>
+          <field name="arch" type="xml">
+            <tree string="Menus" create="false" >
+              <field name="menu_name_search" string="Menu"/>
+              <field name="complete_name" string="Ruta Completa"/>
+              <button name="launch_action" string="Ejecutar Accion" type="object" icon="open_link"/>
+            </tree>
+          </field>
+        </record>
+</data>
+</ecore>

@@ -1,0 +1,27 @@
+<ecore>
+<data>
+
+
+
+        <record model="ir.ui.view" id="inhrt_sale_order_form_view_counter">
+            <field name="name">inherit.sale.order.form.counter</field>
+            <field name="model">sale.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+            <data>
+                <notebook position="before">
+                    <separator string="Captura Rapida Venta" />
+
+                    <group col="4">
+                        <field name="product_on_id" on_change="on_change_load_products(partner_id,product_on_id,order_line)" attrs="{'readonly':[('state','!=','draft')]}" />     
+                    </group>
+                </notebook>
+               
+            </data>
+            </field>
+        </record>
+
+
+</data>
+</ecore>

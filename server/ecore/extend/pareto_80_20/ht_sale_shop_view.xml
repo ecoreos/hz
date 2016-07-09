@@ -1,0 +1,19 @@
+<ecore>
+    <data>
+        <!--================FORM VIEW===============-->
+        <record model="ir.ui.view" id="sale_shop_form_80_20_view">
+            <field name="name">sale_shop_form_view</field>
+            <field name="model">sale.shop</field>
+            <field name="type">form</field>
+            <field name="priority">50</field>
+            <field name="inherit_id" ref="sale.view_shop_form"/>
+            <field name="arch" type="xml">
+                <field name="pricelist_id" position="after">
+                    <field name="80_20"/>
+                </field>
+            </field>
+        </record>
+
+
+    </data>
+</ecore>

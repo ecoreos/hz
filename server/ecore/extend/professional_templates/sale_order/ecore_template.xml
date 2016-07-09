@@ -1,0 +1,8 @@
+<ecore>
+    <data>
+      <template id="SO_5_document" name="eCore Template">
+       <t t-call="sale.report_saleorder_document" t-lang="doc.partner_id.lang"/>
+     </template>
+
+    </data>
+</ecore>

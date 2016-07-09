@@ -1,0 +1,36 @@
+<ecore>
+<data>
+        <record model="ir.ui.view" id="inhrt_account_invoice_form_view_counter_client">
+            <field name="name">inherit.account.invoice.form.counter.client</field>
+            <field name="model">account.invoice</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+            <data>
+                <notebook position="before">
+                    <separator string="Ingreso rapido de datos" />
+                        <field name="product_on_id" on_change="on_change_load_products(partner_id,product_on_id,invoice_line_ids,type)" attrs="{'readonly':[('state','!=','draft')]}" />       
+                </notebook>
+               
+            </data>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="inhrt_account_invoice_form_view_counter">
+            <field name="name">inherit.account.invoice.form.counter</field>
+            <field name="model">account.invoice</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+            <data>
+                <notebook position="before">
+                    <separator string="Ingreso rapido de datos" />
+                        <field name="product_on_id" on_change="on_change_load_products(partner_id,product_on_id,invoice_line_ids,type)" attrs="{'readonly':[('state','!=','draft')]}" />
+                </notebook>
+               
+            </data>
+            </field>
+        </record>
+</data>
+</ecore>

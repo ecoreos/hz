@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+stock_preinventory_model_full_manager,stock_preinventory_model,model_stock_preinventory_model,base.group_user,1,1,1,1
+stock_preinventory_model_line_full_manager,stock_preinventory_model_line,model_stock_preinventory_model_line,base.group_user,1,1,1,1
+stock_preinventory_full_manager,stock_preinventory,model_stock_preinventory,base.group_user,1,1,1,1
+stock_preinventory_line_full_manager,stock_preinventory,model_stock_preinventory_line,base.group_user,1,1,1,1
+consult_export_csv_excel_preinventory_full_manager,consult_export_csv_excel_preinventory,model_consult_export_csv_excel_preinventory,base.group_user,1,1,1,1

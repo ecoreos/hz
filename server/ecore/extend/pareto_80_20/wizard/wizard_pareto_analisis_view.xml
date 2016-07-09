@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ecore>
+    <data>
+
+    <!-- =================== 80/20 CLIENTES ====================== -->
+        <!--======================FORM VIEW =======================-->
+        <record id="wizard_pareto_report_customer_form_view" model="ir.ui.view">
+            <field name="name">wizard.pareto.report.customer.form</field>
+            <field name="model">wizard.pareto.report.customer</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Asistente de Reporte 80/20 Clientes">
+                    <separator colspan="4" string="Generacion Reporte 80/20 Clientes"/>                        
+                        <!-- <h3>Tipo de Reporte</h3>
+                        <group colspan="4">
+                            <field name="report_type" nolabel="1" />
+                        </group> -->
+                        <h3>Periodo de Evaluacion</h3>
+                        <group col="4">
+                            <field name="date"/>
+                            <field name="date_end"/>
+                            <!-- <field name="print_report"/> -->
+                        </group>
+                        <group col="4" colspan="2">
+                            <button special="cancel" string="_Cancelar" type="object" icon="gtk-cancel"/>
+                            <button name="get_info" string="_Generar" type="object" icon='gtk-execute'/>
+                        </group>
+                    </form>
+                </field>
+            </record>
+
+
+        <!--============================================ACCION========================================-->
+        <act_window
+            name="Asistente 80/20 Clientes"
+            res_model="wizard.pareto.report.customer"
+            src_model="pareto.report.customer"
+            view_mode="form" target="new"
+            key2="client_action_multi"
+            id="action_wizard_pareto_report_customer"/>
+
+            <!--============================================MENU========================================-->
+            <menuitem id="menu_reports_argil" name="Analisis Financieros" parent="base.menu_base_partner" sequence="20"/>
+
+            <menuitem action="action_wizard_pareto_report_customer" id="menu_action_wizard_pareto_report_customer" parent="menu_reports_argil" sequence="0"/>
+
+    <!-- =================== DEFINICION DE LOS REPORTES PARA EL 80/20 ====================== -->
+
+    <!-- Agregamos el reporte para salida en formato PDF para lanzarlo desde el Wizard para obtenerlo-->
+
+    <record id="pareto_report_customer_pdf" model="ir.actions.report.xml">
+        <field name="string">Reporte 80/20 de Clientes PDF</field>
+        <field name="auto">True</field>
+        <field name="model">pareto.report.customer</field>
+        <field name="jasper_model_id" ref="pareto_80_20.model_pareto_report_customer"/>
+        <field name="name">Reporte 80/20 de Clientes PDF</field>
+        <field name="report_name">80_20_Clientes_pdf</field>
+        <field name="rml">pareto_80_20/report/pareto_report_customer.jrxml</field>
+        <field name="report_rml">pareto_80_20/report/pareto_report_customer.jrxml</field>
+        <field name="menu">True</field>
+        <field name="header">False</field>
+        <field name="jasper_report">True</field>
+        <field name="jasper_output">pdf</field>
+    </record>
+
+    <record id="pareto_report_customer_pdf_values" model="ir.values">
+            <field name="name">Reporte 80/20 de Clientes PDF</field>
+            <field name="model">pareto.report.customer</field>
+            <field name="key2" eval="'client_print_multi'" />
+            <field name="value_unpickle" eval="'ir.actions.report.xml, ' +str(pareto_report_customer_pdf)" />
+        </record>        
+
+    <!-- Agregamos el reporte para salida en formato XLS para lanzarlo desde el Wizard para obtenerlo-->
+    <record id="pareto_report_customer_xls" model="ir.actions.report.xml">
+        <field name="string">Reporte 80/20 de Clientes XLS</field>
+        <field name="auto">True</field>
+        <field name="model">pareto.report.customer</field>
+        <field name="jasper_model_id" ref="pareto_80_20.model_pareto_report_customer"/>
+        <field name="name">Reporte 80/20 de Clientes XLS</field>
+        <field name="report_name">80_20_Clientes_xls</field>
+        <field name="rml">pareto_80_20/report/pareto_report_customer.jrxml</field>
+        <field name="report_rml">pareto_80_20/report/pareto_report_customer.jrxml</field>
+        <field name="menu">True</field>
+        <field name="header">False</field>
+        <field name="jasper_report">True</field>
+        <field name="jasper_output">xls</field>
+    </record>
+
+    <record id="pareto_report_customer_xls_values" model="ir.values">
+            <field name="name">Reporte 80/20 de Clientes PDF</field>
+            <field name="model">pareto.report.customer</field>
+            <field name="key2" eval="'client_print_multi'" />
+            <field name="value_unpickle" eval="'ir.actions.report.xml, ' +str(pareto_report_customer_xls)" />
+        </record>  
+
+        <!--======================FORM VIEW =======================-->
+<!--         <record id="wizard_pareto_report_form_view" model="ir.ui.view">
+            <field name="name">wizard.pareto.report.form</field>
+            <field name="model">wizard.pareto.report</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Asistente de Reporte 80/20 Productos" version="7.0">
+                    <separator colspan="4" string="Generacion Reporte 80/20 Productos"/>
+                        <h3>Selecciona la Tienda</h3>
+                        <group col="4">
+                            <field name="shop_id" nolabel="1" widget="selection" domain="[('80_20','=',True)]"/>
+                        </group>
+                        <h3>Tipo de Reporte</h3>
+                        <group colspan="4">
+                            <field name="report_type" nolabel="1" />
+                        </group>
+                        <h3>Periodo de Evaluacion</h3>
+                        <group col="4">
+                            <field name="date"/>
+                            <field name="date_end"/>
+                        </group>
+                        <h3>Inventario</h3>
+                        <group col="4">
+                            <field name="days_inventory" />
+                        </group>
+                        <group col="4" colspan="2">
+                            <button special="cancel" string="_Cancelar" type="object" icon="gtk-cancel"/>
+                            <button name="get_info" string="_Generar" type="object" icon='gtk-convert'/>
+                        </group>
+                    </form>
+                </field>
+            </record> -->
+
+
+        <!--============================================ACCION========================================-->
+        <!-- <act_window
+            name="Asistente 80/20 Productos"
+            res_model="wizard.pareto.report"
+            src_model="pareto.report"
+            view_mode="form" target="new"
+            key2="client_action_multi"
+            id="action_wizard_pareto_report"/> -->
+
+            <!--============================================MENU========================================-->
+           <!--  <menuitem action="action_wizard_pareto_report" id="menu_action_wizard_pareto_report" parent="hesatec_analysis_filters_oils.menu_reports_argil" sequence="10"/> -->
+
+    <!-- =================== DEFINICION DE LOS REPORTES PARA EL 80/20 ====================== -->
+
+    <!-- Agregamos el reporte para salida en formato PDF para lanzarlo desde el Wizard para obtenerlo-->
+
+<!--         <record id="pareto_report_pdf" model="ir.actions.report.xml">
+            <field name="name">pareto_report_pdf</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">pareto.report</field>
+            <field name="report_name">pareto_report_pdf</field>
+            <field name="report_rml">pareto_80_20/report/pareto_report.jrxml</field>
+            <field name="report_type">pdf</field>
+            <field name="jasper_report">1</field>
+            <field name="jasper_output">pdf</field>
+        </record> -->
+
+    <!-- Agregamos el reporte para salida en formato XLS para lanzarlo desde el Wizard para obtenerlo-->
+
+<!--         <record id="pareto_report_xls" model="ir.actions.report.xml">
+            <field name="name">pareto_report_xls</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">pareto.report</field>
+            <field name="report_name">pareto_report_xls</field>
+            <field name="report_rml">pareto_80_20/report/pareto_report.jrxml</field>
+            <field name="report_type">xls</field>
+            <field name="jasper_report">1</field>
+            <field name="jasper_output">xls</field>
+        </record>
+ -->
+
+
+    </data>
+</ecore>

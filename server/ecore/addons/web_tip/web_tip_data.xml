@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore>
+    <data>
+
+        <!-- Generic tip on breadcrumbs -->
+        <record model="web.tip" id="web_tip_1">
+            <field name="title"></field>
+            <field name="description">Navegue fácilmente entre documentos utilizando la ruta de navegación para volver a las pantallas anteriores.</field>
+            <field name="model"></field>
+            <field name="mode">form</field>
+            <field name="trigger_selector">.o_form_buttons_view:visible,ol.breadcrumb a</field>
+            <field name="highlight_selector">ol.breadcrumb:visible a:last</field>
+            <field name="placement">bottom</field>
+        </record>
+
+        <!-- Generic tip on status bars -->
+        <record model="web.tip" id="web_tip_2">
+            <field name="title"></field>
+            <field name="description"><![CDATA[Ahorre tiempo, cambia el estado para documentos aquí]]></field>
+            <field name="model"></field>
+            <field name="mode">form</field>
+            <field name="trigger_selector">.o_statusbar_status.o_form_field:visible > button:not(.disabled)</field>
+            <field name="highlight_selector">.o_statusbar_status.o_form_field</field>
+            <field name="end_event">mousedown</field>
+            <field name="placement">bottom</field>
+        </record>
+
+        <!-- Generic tip on kanban add a new column -->
+        <record model="web.tip" id="web_tip_3">
+            <field name="title">Crea una nueva columna</field>
+            <field name="description"><![CDATA[Crear una columna por etapa de su proceso de trabajo. Por ejemplo, en un proyecto de desarrollo, etapas podrían ser: Especificaciones, Desarrollo, Test, Hecho.]]></field>
+            <field name="model"></field>
+            <field name="mode">kanban</field>
+            <field name="trigger_selector">.o_kanban_view .o_kanban_add_column:visible</field>
+            <field name="highlight_selector">.o_kanban_view .o_kanban_add_column:visible</field>
+            <field name="end_event">mousedown</field>
+            <field name="placement">bottom</field>
+        </record>
+
+        <!-- Generic tip on archive stat button -->
+        <record model="web.tip" id="web_tip_4">
+            <field name="title">Archivar un elemento</field>
+            <field name="description"><![CDATA[Si usted ha terminado con este elemento, haga clic aquí para archivarlo. No va a aparecer de nuevo, pero se puede mostrar con el filtro 'Archivado', y reactivarla si es necesario.]]></field>
+            <field name="model"></field>
+            <field name="mode">form</field>
+            <field name="trigger_selector">button > .fa-file-archive-o</field>
+            <field name="highlight_selector">button > .fa-file-archive-o</field>
+            <field name="end_event">mousedown</field>
+            <field name="placement">bottom</field>
+        </record>
+
+    </data>
+</ecore>

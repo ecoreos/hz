@@ -1,0 +1,34 @@
+include requirements.txt
+include LICENSE
+include README.md
+recursive-include ecore *.css
+recursive-include ecore *.csv
+recursive-include ecore *.doc
+recursive-include ecore *.gif
+recursive-include ecore *.html
+recursive-include ecore *.ico
+recursive-include ecore *.jpeg
+recursive-include ecore *.jpg
+recursive-include ecore *.js
+recursive-include ecore *.less
+recursive-include ecore *.md
+recursive-include ecore *.mp3
+recursive-include ecore *.ogg
+recursive-include ecore *.pdf
+recursive-include ecore *.png
+recursive-include ecore *.po
+recursive-include ecore *.rml
+recursive-include ecore *.rng
+recursive-include ecore *.rst
+recursive-include ecore *.sass
+recursive-include ecore *.sql
+recursive-include ecore *.svg
+recursive-include ecore *.template
+recursive-include ecore *.txt
+recursive-include ecore *.ttf
+recursive-include ecore *.woff
+recursive-include ecore *.xsl
+recursive-include ecore *.xml
+recursive-include ecore *.yml
+recursive-exclude * *.py[co]
+recursive-exclude * *.hg*

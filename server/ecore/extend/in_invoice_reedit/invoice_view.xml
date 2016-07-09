@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ecore>
+    <data>
+
+        <record model="ir.ui.view" id="view_account_invoice_form_inh_reedit_open">
+            <field name="name">view.account.invoice.form.inh.reedit_open</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <field name="state" position="before">
+                    <button name="reedit_invoice_open" states="open" string="Modificar Factura" type="object" icon="gtk-open"/>
+                </field>
+            </field>
+        </record>
+        
+        
+        <record model="ir.ui.view" id="view_account_invoice_supplier_form_inh_reedit_open">
+            <field name="name">view.account.invoice.supplier.form.inh.reedit_open</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <field name="state" position="before">
+                    <button name="reedit_invoice_open" states="open" string="Modificar Factura" type="object" icon="gtk-open"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</ecore>

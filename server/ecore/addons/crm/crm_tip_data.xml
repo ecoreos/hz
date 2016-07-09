@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore>
+    <data>
+
+        <record model="web.tip" id="crm_tip_2">
+            <field name="title"></field>
+            <field name="description">Click to view the opportunities related to this customer.</field>
+            <field name="action_id" ref="base.action_partner_form"/>
+            <field name="model">res.partner</field>
+            <field name="mode">form</field>
+            <field name="trigger_selector">.o_form_buttons_view:visible:not(.modal-dialog .o_form_buttons_view:visible), div.oe_button_box > button</field>
+            <field name="highlight_selector">div.oe_button_box:visible > button.o_res_partner_tip_opp</field>
+            <field name="placement">bottom</field>
+        </record>
+
+        <record model="web.tip" id="crm_tip_4">
+            <field name="title"></field>
+            <field name="description"><![CDATA[<b>Esta es una oportunidad de negocio</b> Arrástrelo y suéltelo a otra columna, mientras se mueve hacia adelante en el ciclo de ventas. Amplía la oportunidad.]]></field>
+            <field name="model">crm.lead</field>
+            <field name="mode">kanban</field>
+            <field name="trigger_selector">.oe_kanban_content:visible</field>
+            <field name="highlight_selector">.oe_kanban_content:visible</field>
+            <field name="end_event">mousedown</field>
+            <field name="placement">auto top</field>
+        </record>
+
+        <record model="web.tip" id="crm_tip_5">
+            <field name="title"></field>
+            <field name="description"><![CDATA[Cambie a la vista gráfica para obtener información mas clara sobre sus oportunidades.]]></field>
+            <field name="model">crm.lead</field>
+            <field name="mode">kanban</field>
+            <field name="trigger_selector">.o_kanban_record:eq(20):visible</field>
+            <field name="highlight_selector">button[data-view-type=graph]</field>
+            <field name="end_event">mousedown</field>
+            <field name="placement">left</field>
+        </record>
+
+        <record model="web.tip" id="crm_tip_6">
+            <field name="title"></field>
+            <field name="description"><![CDATA[<strong>Clic aqui para registrar una nueva oportunidad de negocio</strong>. Una vez creada la oportunidad, usted será capaz de arrastrarla a su canal de ventas.]]></field>
+            <field name="model">crm.lead</field>
+            <field name="mode">kanban</field>
+            <field name="trigger_selector">.o_kanban_quick_add:visible</field>
+            <field name="highlight_selector">.o_kanban_quick_add:visible</field>
+            <field name="placement">bottom</field>
+        </record>
+
+
+    </data>
+</ecore>
