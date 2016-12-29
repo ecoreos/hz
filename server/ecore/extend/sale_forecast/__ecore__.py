@@ -1,11 +1,4 @@
 # -*- encoding: utf-8 -*-
-##############################################################################
-#
-#    Bista Solutions Pvt. Ltd
-#    Copyright (C) 2012 (http://www.bistasolutions.com)
-#
-##############################################################################
-
 {
     'name': 'Sale Forecast',
     'category': 'sales',
@@ -14,8 +7,9 @@
     'description': """
 Provides ability to forecast the quantity for the products and based upon the calculation of action quantity, Purchase Order or Manufacture order can be created.
 
+
     """,
-    'author': 'Avalos Corp',
+    'author': 'Avalos',
     'depends': ['sale', 'stock','crm','procurement_jit','purchase','mrp'],
     'data': [
         'sale_forecast_view.xml',
