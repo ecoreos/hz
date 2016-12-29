@@ -1,9 +1,10 @@
 # -*- encoding: utf-8 -*-
 
 from ecore.osv import fields, orm
+from ecore import api, fields, models
 
 
-class account_invoice(orm.Model):
+class account_invoice(models.Model):
     _inherit = "account.invoice"
 
     _columns = {
