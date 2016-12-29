@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 
-from ecore.osv import orm,
+from ecore.osv import orm
 from ecore import api, fields, models
 
 
